@@ -1,0 +1,132 @@
+/* ====== GLOBAL STYLING ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* ====== CALCULATOR CONTAINER ====== */
+.calculator {
+    width: 900px;
+    max-width: 95%;
+    background: #1b1f2a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====== DISPLAY ====== */
+.display input {
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-radius: 10px;
+    background: #111;
+    color: #00ffff;
+    font-size: 28px;
+    text-align: right;
+    padding: 10px 15px;
+    box-shadow: inset 0 0 15px rgba(0,255,255,0.3);
+    margin-bottom: 20px;
+}
+
+/* ====== BODY LAYOUT ====== */
+.calc-body {
+    display: flex;
+    gap: 20px;
+}
+
+/* ====== SCIENTIFIC SECTION ====== */
+.scientific {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+/* ====== NUMBERS SECTION ====== */
+.numbers {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* ====== BUTTONS ====== */
+.btn {
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #24293a;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Hover Effect */
+.btn:hover {
+    background: #00ffff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+/* Click Animation */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Special Buttons */
+.operator {
+    background: #ff9800;
+}
+
+.equal {
+    background: #00c853;
+    grid-column: span 1;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.clear {
+    background: #e53935;
+}
+
+.delete {
+    background: #6c757d;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .calc-body {
+        flex-direction: column;
+    }
+
+    .calculator {
+        width: 100%;
+        height: auto;
+    }
+
+    .btn {
+        padding: 18px;
+        font-size: 20px;
+    }
+}
